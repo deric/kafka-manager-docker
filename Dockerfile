@@ -23,13 +23,14 @@ RUN apt-get update \
   && apt-get install --no-install-recommends -y openjdk-8-jdk-headless unzip\
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /app
+RUN mkdir -p /app/logs
 COPY --from=builder /src/kafka-manager-$VERSION/target/universal/kafka-manager-$VERSION.zip /tmp
 RUN unzip -d /tmp /tmp/kafka-manager-$VERSION.zip && mv /tmp/kafka-manager-$VERSION/* /app/ && rm -rf /tmp/kafka-manager*
 ADD entrypoint.sh /app/
 ADD application.conf /app/conf/
+ADD logback.xml /app/conf/
 
 WORKDIR /app
 
 EXPOSE 9000
-ENTRYPOINT ["./entrypoin.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
