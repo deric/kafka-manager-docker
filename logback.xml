@@ -27,10 +27,6 @@
     <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
     <logger name="org.apache.zookeeper" level="INFO"/>
 
-    <root level="debug">
-        <appender-ref ref="STDOUT" />
-    </root>
-
     <root level="WARN">
         <appender-ref ref="ASYNCSTDOUT" />
     </root>
