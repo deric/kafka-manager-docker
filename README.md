@@ -1,5 +1,7 @@
 # kafka-manager Docker image
 
+[![Docker Layers](https://images.microbadger.com/badges/image/deric/kafka-manager.svg)](https://microbadger.com/images/deric/kafka-manager)
+
 A Docker container based on Debian 9 containing just Java and Yahoo's kafka-manager.
 
 ## Building
