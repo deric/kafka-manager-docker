@@ -11,9 +11,19 @@ Use `ZK_HOSTS` to specify connection to your ZooKeeper cluster, e.g. `zk-1.zk:21
 docker run -it --rm  -p 9000:9000 -e ZK_HOSTS="localhost:2181" deric/kafka-manager
 ```
 
+
 ## Building
 
 Simply specify version of a release available at [kafka-manager github](https://github.com/yahoo/kafka-manager/releases), e.g.:
 ```
 make build v=1.3.3.15
 ```
+to run local build simply use:
+```
+make run
+```
+or
+```
+make run v=1.3.3.15
+```
+to start specific `kafka-manager` version.
