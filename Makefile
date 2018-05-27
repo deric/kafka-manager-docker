@@ -1,10 +1,11 @@
 NAME=deric/kafka-manager
-v ?= 1.3.3.15
+v ?= 1.3.3.17
 
-release:
+release: build
 	$(call RELEASE,$(v))
 
 build:
+	docker pull `head -n 1 Dockerfile | awk '{ print $$2 }'`
 	$(call BUILD,$(v))
 
 run: build
