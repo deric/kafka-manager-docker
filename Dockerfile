@@ -1,4 +1,4 @@
-FROM debian:stretch as builder
+FROM debian:stretch-slim as builder
 MAINTAINER Tomas Barton <tomas.barton@gmail.com>
 
 ENV LANG C.UTF-8
@@ -13,7 +13,7 @@ RUN mkdir -p /tmp /src && wget -nv https://github.com/yahoo/kafka-manager/archiv
   && echo 'scalacOptions ++= Seq("-Xmax-classfile-name", "200")' >> build.sbt\
   && ./sbt clean dist
 
-FROM debian:stretch
+FROM debian:stretch-slim
 
 ENV LANG C.UTF-8
 ARG VERSION
