@@ -25,7 +25,8 @@ RUN apt-get update && mkdir -p /usr/share/man/man1/ \
 
 RUN mkdir /app
 COPY --from=builder /src/kafka-manager-$VERSION/target/universal/kafka-manager-$VERSION.zip /tmp
-RUN unzip -d /tmp /tmp/kafka-manager-$VERSION.zip && mv /tmp/kafka-manager-$VERSION/* /app/ && rm -rf /tmp/kafka-manager*
+RUN unzip -d /tmp /tmp/kafka-manager-$VERSION.zip && mv /tmp/kafka-manager-$VERSION/* /app/ \
+ && rm -rf /tmp/kafka-manager* && rm -rf /app/share/doc
 ADD entrypoint.sh /app/
 ADD application.conf /app/conf/
 ADD logback.xml /app/conf/
