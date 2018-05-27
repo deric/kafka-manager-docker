@@ -4,7 +4,7 @@ MAINTAINER Tomas Barton <tomas.barton@gmail.com>
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 # install dependencies
-RUN apt-get update && apt-get install --no-install-recommends -y openjdk-8-jdk-headless wget\
+RUN apt-get update && mkdir -p /usr/share/man/man1/ && apt-get install --no-install-recommends -y openjdk-8-jdk-headless wget\
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ARG VERSION
@@ -19,7 +19,7 @@ ENV LANG C.UTF-8
 ARG VERSION
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update \
+RUN apt-get update && mkdir -p /usr/share/man/man1/ \
   && apt-get install --no-install-recommends -y openjdk-8-jdk-headless unzip\
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
