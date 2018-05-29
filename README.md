@@ -11,6 +11,14 @@ Use `ZK_HOSTS` to specify connection to your ZooKeeper cluster, e.g. `zk-1.zk:21
 docker run -it --rm  -p 9000:9000 -e ZK_HOSTS="localhost:2181" deric/kafka-manager
 ```
 
+Supported ENV variables:
+* `APPLICATION_SECRET`
+* `HTTP_CONTEXT`
+* `ZK_HOSTS`
+* `BASE_ZK_PATH`
+* `KAFKA_MANAGER_LOGLEVEL` default: `INFO`
+* `KAFKA_MANAGER_CONFIG` default `./conf/application.conf`
+* `HTTP_PORT` default `9000`
 
 ## Building
 
