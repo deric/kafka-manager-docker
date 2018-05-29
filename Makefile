@@ -18,6 +18,7 @@ endef
 
 define RELEASE
 	$(call BUILD,$(1));
+	git push
 	docker tag $(NAME) $(NAME):$(1)
 	docker push $(NAME):$(1)
 endef
