@@ -17,8 +17,9 @@ Supported ENV variables:
 * `ZK_HOSTS`
 * `BASE_ZK_PATH`
 * `KAFKA_MANAGER_LOGLEVEL` default: `INFO`
-* `KAFKA_MANAGER_CONFIG` default `./conf/application.conf`
+* `KAFKA_MANAGER_CONFIG` default: `./conf/application.conf`
 * `HTTP_PORT` default `9000`
+* `LOGGER_STARTUP_TIMEOUT` default: `60s`
 
 ## Building
 
