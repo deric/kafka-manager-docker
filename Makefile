@@ -1,11 +1,11 @@
 NAME=deric/kafka-manager
-v ?= 1.3.3.17
+v ?= 1.3.3.18
 
 release: build
 	$(call RELEASE,$(v))
 
 build:
-	docker pull `head -n 1 Dockerfile | awk '{ print $$2 }'`
+	mkdir -p tmp src && wget -nv https://github.com/yahoo/kafka-manager/archive/$(v).tar.gz -O tmp/kafka-manager.tar.gz && tar -xf tmp/kafka-manager.tar.gz -C src && cd src/kafka-manager-$(v) && echo 'scalacOptions ++= Seq("-Xmax-classfile-name", "200")' >> build.sbt && ./sbt update && ./sbt dist
 	$(call BUILD,$(v))
 
 run: build
