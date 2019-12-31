@@ -1,5 +1,5 @@
 NAME=deric/kafka-manager
-v ?= 1.3.3.18
+v ?= 2.0.0.2
 
 release: build
 	$(call RELEASE,$(v))
