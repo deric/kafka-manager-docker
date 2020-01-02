@@ -4,6 +4,8 @@
 
 A Docker container based on Debian 9 containing just OpenJDK Java 8 and [Yahoo's kafka-manager](https://github.com/yahoo/kafka-manager).
 
+See [available precompiled versions](https://hub.docker.com/r/deric/kafka-manager/tags).
+
 ## Running
 
 Use `ZK_HOSTS` to specify connection to your ZooKeeper cluster, e.g. `zk-1.zk:2181,zk-2.zk:2181,zk-3.zk:2181/kafka-manager`.
@@ -25,7 +27,7 @@ Supported ENV variables:
 
 Simply specify version of a release available at [kafka-manager github](https://github.com/yahoo/kafka-manager/releases), e.g.:
 ```
-make build v=1.3.3.15
+make build v=2.0.0.2
 ```
 to run local build simply use:
 ```
@@ -33,6 +35,6 @@ make run
 ```
 or
 ```
-make run v=1.3.3.15
+make run v=2.0.0.2
 ```
 to start specific `kafka-manager` version.
