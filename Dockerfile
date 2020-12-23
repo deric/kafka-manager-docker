@@ -18,5 +18,5 @@ ADD logback.xml /app/conf/
 
 WORKDIR /app
 
-EXPOSE 9000
+EXPOSE 9092
 ENTRYPOINT ["./entrypoint.sh"]
